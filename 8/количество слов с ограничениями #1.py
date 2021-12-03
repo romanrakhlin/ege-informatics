@@ -21,3 +21,20 @@ for a in s:
 
 print(result)
 
+# используем встроенный модуль питона
+import itertools
+
+# генерируем варианты слов из букв "ЕГЭ" и длиной 5
+words = list(itertools.product("ЕГЭ", repeat = 5))
+# счетчик корректных слов
+counter = 0
+# проходим по каждому слову
+for element in words:
+	# делаем строку
+	element = ''.join(element)
+	# проверяем первый элемент, гласный ли он
+	if (element[0] in ['Е', 'Э']):
+		# если да, то увеличиваем счетчик
+		counter += 1
+
+print(counter)
